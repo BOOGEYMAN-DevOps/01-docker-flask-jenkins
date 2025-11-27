@@ -1,0 +1,52 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Pull Code') {
+            steps {
+                cleanWs()
+                git branch: 'main', url: 'https://github.com/BOOGEYMAN-DevOps/01-docker-flask-jenkins.git'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t flask-jenkins:latest .'
+            }
+        }
+
+        stage('Deploy Container') {
+            steps {
+                sh '''
+                    docker ps -q --filter "name=flask-jenkins" | grep -q . && docker stop flask-jenkins || true
+                    docker ps -a -q --filter "name=flask-jenkins" | grep -q . && docker rm flask-jenkins || true
+                    docker run -d --name flask-jenkins -p 5000:5000 flask-jenkins:latest
+                '''
+            }
+        }
+
+        stage('Push to DockerHub') {
+            when { expression { false } } // Enable later
+            steps {
+                withCredentials([usernamePassword(
+                    credentialsId: 'dockerhub_creds',
+                    usernameVariable: 'DOCKER_USER',
+                    passwordVariable: 'DOCKER_PASS'
+                )]) {
+                    sh '''
+                        echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
+                        docker tag flask-jenkins ${DOCKER_USER}/flask-jenkins:latest
+                        docker push ${DOCKER_USER}/flask-jenkins:latest
+                    '''
+                }
+            }
+        }
+    }
+
+    post {
+        success { echo "Pipeline executed successfully 🎉" }
+        failure { echo "Pipeline failed ❌ — check logs" }
+    }
+}
+
