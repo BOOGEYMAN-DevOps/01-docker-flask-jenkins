@@ -5,6 +5,8 @@ pipeline {
     IMAGE_NAME = "jonathan661/flask-jenkins"   
     DOCKERHUB_CREDS = 'dockerhub-creds'                
     APP_CONTAINER_NAME = 'flask-app'
+    APP_SERVER = 'ubuntu@172.31.120.146'
+    SSH_CREDENTIALS_ID = 'ubuntu-server-key'
   }
 
   stages {
