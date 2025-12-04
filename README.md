@@ -5,7 +5,7 @@ This project is designed to help beginners understand how real DevOps pipelines 
 You will learn the basics of automation, Docker, Jenkins pipelines, GitHub workflows, and deployment.
 
 Everything is broken down in simple terms so anyone can follow along.
-## 🧱 Tech Stack
+##  Tech Stack
 - Python (simple backend App)
 - Jenkins (CI/CD)
 - DockerHub (image registry)
@@ -13,7 +13,7 @@ Everything is broken down in simple terms so anyone can follow along.
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 ![Architecture Diagram](assets/deployment-flow.png)
 
 1. Developer pushes code to GitHub  
@@ -56,7 +56,9 @@ Environment-based configuration
 
 ---
 
-## ⚙️ Run Locally
+##  Run Locally #  Run Locally
+
+## Project Structure
 ├── app/
 │   ├── main.py
 │   ├── requirements.txt
@@ -72,29 +74,26 @@ Environment-based configuration
 ---    
 
 ## Prerequisites + Documentation Links
-1️⃣ Git
-Install Git
-🔗 https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
-2️⃣ Python 3
-Install Python
-🔗 https://www.python.org/downloads/
-3️⃣ Docker
-Install Docker Engine
-🔗 https://docs.docker.com/engine/install/
-4️⃣ Jenkins
-Install Jenkins on Ubuntu
-🔗 https://www.jenkins.io/doc/book/installing/
-5️⃣ DockerHub Account
-🔗 https://hub.docker.com/signup
 
----
+1️⃣ **Git** – Install Git: [Git Docs](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)  
+2️⃣ **Python 3** – Install Python: [Python Downloads](https://www.python.org/downloads/)  
+3️⃣ **Docker** – Install Docker Engine: [Docker Docs](https://docs.docker.com/engine/install/)  
+4️⃣ **Jenkins** – Install Jenkins on Ubuntu: [Jenkins Docs](https://www.jenkins.io/doc/book/installing/)  
+5️⃣ **DockerHub Account** – Sign up: [DockerHub](https://hub.docker.com/signup)  
 
- ## Run locally
+## Run Locally
+
+```bash
+# Clone the repository
 git clone https://github.com/tambe-devops/01-docker-flask-jenkins.git
 cd 01-docker-flask-jenkins
+
+# Build Docker image
 docker build -t flask-jenkins:latest .
+
+# Run Docker container
 docker run -p 5000:5000 flask-jenkins:latest
-Visit 👉 http://localhost:5000
+# Visit 👉 http://localhost:5000
 
 ---
 
