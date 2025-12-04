@@ -9,7 +9,7 @@
 ---
 
 ## 🏗️ Architecture
-![Architecture Diagram](docs/architecture.png)
+![Architecture Diagram](assets/deployment-flow.png)
 
 1. Developer pushes code to GitHub  
 2. Jenkins pulls code → builds Docker image  
