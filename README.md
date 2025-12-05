@@ -57,17 +57,15 @@ Environment-based configuration
 ---
 
 ## Project Structure
-├── app/
-│   ├── main.py
-│   ├── requirements.txt
-│   ├── templates/
-│   └── static/
-├── Jenkinsfile
-├── Dockerfile
-├── README.md
-├── assets/
-│   └── deployment-flow.png
-└── kubernetes/  # optional
+-app/
+  -main.py
+  -requirements.txt
+-Jenkinsfile
+-Dockerfile
+-README.md
+-assets/
+  -deployment-flow.png
+  -kubernetes/  # optional
 
 ---    
 
@@ -114,4 +112,6 @@ Deployment automation
 Docker best practices
 Advanced repo organization
 Production-ready DevOps mindset
-![Final](assets/jenkins-pipeline)
+## Pipeline
+At the final stage of the deployment this is what you should expect after a successful pipeline
+![Final](assets/jenkins-pipeline.png)
