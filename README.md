@@ -114,4 +114,8 @@ Advanced repo organization
 Production-ready DevOps mindset
 ## Pipeline
 At the final stage of the deployment this is what you should expect after a successful pipeline
+
+
+
+
 ![Final](assets/jenkins-pipeline.png)
