@@ -91,4 +91,27 @@ docker build -t flask-jenkins:latest .
 # Run Docker container
 docker run -p 5000:5000 flask-jenkins:latest
 # Visit 👉 http://localhost:5000
+```
 
+---
+
+## Who Is This Project For?
+
+Perfect for:
+Beginners in DevOps
+People building a DevOps portfolio
+Students preparing for interviews
+Anyone who wants to deploy a real app end-to-end
+
+---
+
+## Conclusion
+
+This project is built to represent real-world DevOps engineering standards — with CI/CD, automation, containerization, and architectural thinking.
+It demonstrates:
+Your ability to set up pipelines
+Deployment automation
+Docker best practices
+Advanced repo organization
+Production-ready DevOps mindset
+![Final](assets/jenkins-pipeline)
